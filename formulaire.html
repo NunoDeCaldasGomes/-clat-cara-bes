@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver votre Instant | Éclat Caraïbe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-light">
+
+    <header class="scrolled">
+        <div class="container nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="télécharger.png" alt="Éclat Caraïbe Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#concept">Notre Histoire</a></li>
+                    <li><a href="index.html#espaces">Nos Espaces</a></li>
+                    <li><a href="index.html#rituels">Rituels & Soins</a></li>
+                    <li><a href="formulaire.html" class="btn-reserver">Réserver</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section reservation-section">
+        <div class="container unique-form-container">
+            
+            <div class="form-intro">
+                <span class="pre-title">Planifiez votre évasion</span>
+                <h1 class="section-title">L'Art du Temps pour Soi</h1>
+                <p>Sélectionnez votre rituel d'exception. Nos thérapeutes vous attendent dans le 7ᵉ arrondissement pour harmoniser votre corps et éveiller vos sens aux parfums des Caraïbes.</p>
+                
+                <div class="info-prestige">
+                    <div class="info-item">
+                        <i class="fa-solid fa-bell-concierge"></i>
+                        <p><strong>Service Sur-Mesure :</strong> Des infusions personnalisées vous sont offertes avant chaque soin.</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <p><strong>Ponctualité :</strong> Merci de vous présenter 15 minutes avant l'heure de votre rituel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-card shadow">
+                <form id="spa-booking-form">
+                    
+                    <div class="form-group">
+                        <label for="client-name">Nom & Prénom</label>
+                        <input type="text" id="client-name" placeholder="Ex: Jean Dupont" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="client-email">Adresse Email</label>
+                        <input type="email" id="client-email" placeholder="Ex: jean.dupont@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="soin-select">Votre Soin d'Exception</label>
+                        <select id="soin-select" required>
+                            <option value="" disabled selected>-- Choisissez votre expérience --</option>
+                            <option value="ocean">Rituel Océan (Soin Signature aux coquillages chauffés) - 1h30</option>
+                            <option value="foret">Cabine Forêt Tropicale (Immersion sensorielle Basse-Terre) - 1h00</option>
+                            <option value="sel">Grotte de Sel Marin (Purification & Brume des Caraïbes) - 45min</option>
+                            <option value="vagues">Massage Vagues des Caraïbes (Huiles précieuses) - 1h15</option>
+                            <option value="bassin">Bassin d'Immersion Tropicale (Lagon chauffé privé) - 1h00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="booking-date">Date Souhaitée</label>
+                        <input type="date" id="booking-date" required>
+                    </div>
+
+                    <div class="form-group" id="slots-container" style="display:none;">
+                        <label>Horaires Disponibles</label>
+                        <div class="time-slots-grid">
+                            </div>
+                        <input type="hidden" id="selected-time" required>
+                    </div>
+
+                    <button type="submit" class="btn-outline btn-submit-form" id="btn-valider" disabled>Confirmer ma demande de réservation</button>
+                </form>
+                <div id="success-message" class="success-box" style="display:none;">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <h4>Demande Enregistrée</h4>
+                    <p>Votre demande de rituel chez Éclat Caraïbe est en cours de validation. Un email de confirmation vous a été envoyé.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="chatbot-wrapper">
+        <button class="chatbot-toggle-btn shadow" id="chatbot-toggle">
+            <i class="fa-regular fa-comments"></i>
+            <span class="badge-bot">1</span>
+        </button>
+
+        <div class="chatbot-window shadow" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="bot-profile">
+                    <div class="bot-avatar">EC</div>
+                    <div>
+                        <h4>L'Assistant Éclat</h4>
+                        <span class="status"><i class="fa-solid fa-circle"></i> En ligne</span>
+                    </div>
+                </div>
+                <button class="close-bot" id="close-chatbot"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="msg bot-msg">
+                    <p>Bonjour ! Je suis l'assistant virtuel d'Éclat Caraïbe. ✨</p>
+                </div>
+                <div class="msg bot-msg">
+                    <p>Une question sur la <strong>Cabine Forêt Tropicale</strong>, la <strong>Grotte de Sel</strong> ou notre <strong>Rituel Océan</strong> aux coquillages chauds ? Écrivez-moi, je vous guide dans votre voyage.</p>
+                </div>
+            </div>
+
+            <div class="chatbot-input-area">
+                <input type="text" id="chatbot-input" placeholder="Posez votre question ici...">
+                <button id="chatbot-send"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="reservation.js"></script>
+</body>
+</html>

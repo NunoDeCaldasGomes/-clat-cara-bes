@@ -1,0 +1,837 @@
+/* =========================================
+   FEUILLE DE STYLE V2.0 - ÉCLAT CARAÏBE
+   Identité : Chic Parisien & Exotisme Guadeloupéen
+   ========================================= */
+
+/* 1. VARIABLES DE MARQUE (La Palette Fusion)
+   ----------------------------------------- */
+:root {
+    /* Couleurs Principales */
+    --primary: #134e55;         /* Vert Caraïbes Profond (Océan/Jungle) - de image_3.png */
+    --secondary: #c5a059;       /* Or Champagne Parisien (Dorures/Luxe) - de image_0.png */
+    
+    /* Couleurs de Fond et Neutres */
+    --bg-light: #f2e8da;        /* Sable de Marie-Galante (Chaleur) */
+    --bg-dark: #1a3c40;         /* Forêt Nocturne (Profondeur) */
+    --white: #ffffff;
+    
+    /* Couleurs de Texte */
+    --text-dark: #333333;       /* Texte Principal (Sérieux) */
+    --text-light: #f5f5f5;      /* Texte sur fond sombre */
+    --text-light-subtle: #b0bec5; /* Gris Volcanique (Sous-titres sur fond sombre) */
+    
+    /* Typographie de Fusion */
+    --font-heading: 'Cinzel', serif;   /* Prestige Parisien (Classique) */
+    --font-body: 'Montserrat', sans-serif; /* Structure & Modernité (Lisibilité) */
+    
+    /* Divers */
+    --shadow-premium: 0 15px 35px rgba(0,0,0,0.08); /* Ombre douce et sophistiquée */
+    --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. BASE & RESET
+   ----------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Taille de base uniforme */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.8; /* Espacement de texte plus aéré, luxueux */
+    font-weight: 300; /* Plus léger, plus chic */
+}
+
+.container {
+    max-width: 1300px; /* Plus large pour les grands écrans */
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section {
+    padding: 120px 0; /* Plus d'espace entre les sections */
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* 3. TYPOGRAPHIE NARRATIVE
+   ----------------------------------------- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 1px; /* Espacement subtil */
+}
+
+.section-title {
+    font-size: 3rem; /* Grand titre prestigieux */
+    color: var(--primary);
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Sous-titre texturé */
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    margin-bottom: 35px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 3px; /* Très espacé, signature de luxe */
+    font-family: var(--font-body);
+}
+
+/* 4. BOUTONS & INTERACTION PREMIUM
+   ----------------------------------------- */
+a { text-decoration: none; transition: var(--transition-smooth); }
+
+.btn-reserver {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.btn-reserver:hover {
+    background-color: #b5952f; /* Or plus chaud au survol */
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    padding: 18px 50px;
+    border-radius: 35px;
+    font-size: 1rem;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: var(--transition-smooth);
+    margin-top: 40px;
+}
+
+.btn-outline:hover {
+    background-color: var(--secondary);
+    color: var(--white);
+    box-shadow: var(--shadow-premium);
+}
+
+/* 5. NAVBAR (Élégance discrète)
+   ----------------------------------------- */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: var(--transition-smooth);
+    padding: 25px 0;
+}
+
+/* Navbar Scrollee (Parisienne Classique) */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    padding: 15px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    height: 70px;
+    transition: var(--transition-smooth);
+}
+
+header.scrolled .logo {
+    height: 55px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: var(--text-light); /* Blanc sur l'image Hero */
+    font-weight: 400;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Liens sur Navbar Scrollee */
+header.scrolled .nav-links a {
+    color: var(--primary);
+}
+
+header.scrolled .nav-links a:hover {
+    color: var(--secondary);
+}
+
+/* Hamburger mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 2px;
+    background-color: var(--secondary);
+}
+
+/* 6. HERO SECTION (L'Image de Marque)
+   ----------------------------------------- */
+.hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Overlay léger pour la lisibilité */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(19, 78, 85, 0.6) 0%, rgba(26, 60, 64, 0.2) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    color: var(--text-light);
+    padding: 0 20px;
+}
+
+.hero h1 {
+    font-size: 4.5rem; /* Immense, accrocheur */
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-weight: 400; /* Légèreté du Cinzel */
+}
+
+.hero p {
+    font-size: 1.3rem;
+    font-weight: 200; /* Ultra léger */
+    letter-spacing: 1px;
+}
+
+/* 7. CONCEPT SPLIT (Narratif)
+   ----------------------------------------- */
+.split-layout {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.text-content { flex: 1; }
+.image-content { flex: 1; }
+
+.text-content h3 {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.text-content p {
+    margin-bottom: 25px;
+    color: #444;
+    font-size: 1.1rem;
+}
+
+.rounded-img {
+    border-radius: 12px;
+    width: 100%;
+    transition: var(--transition-smooth);
+}
+
+.image-content:hover .rounded-img {
+    transform: scale(1.02); /* Effet discret de profondeur */
+}
+
+.shadow {
+    box-shadow: var(--shadow-premium);
+}
+
+/* 8. CARDS GRID (Espaces/Luxe)
+   ----------------------------------------- */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03); /* Ombre plus légère */
+    border-bottom: 4px solid #eee; /* Bordure discrète par défaut */
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-bottom: 4px solid var(--secondary); /* Bordure dorée au survol */
+    box-shadow: var(--shadow-premium);
+}
+
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 35px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-body h4 {
+    color: var(--primary);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+}
+
+.card-body p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* Plan 3D */
+.full-img {
+    width: 100%;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* 9. SERVICES LIST (Menu Prestige)
+   ----------------------------------------- */
+.services-list {
+    max-width: 850px;
+    margin: 60px auto 0;
+}
+
+.service-item {
+    border-bottom: 1px solid #eee; /* Ligne de séparation fine */
+    padding: 35px 0;
+    transition: var(--transition-smooth);
+}
+
+.service-item:hover {
+    background-color: #fafafa;
+    padding-left: 10px; /* Effet discret de décalage */
+}
+
+.service-item:last-child { border-bottom: none; }
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.service-header h4 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.price {
+    background-color: var(--bg-light); /* Fond de sous-titre doré doux */
+    color: var(--secondary);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    letter-spacing: 1px;
+}
+
+.service-item p { 
+    color: #555; 
+    font-weight: 300;
+    max-width: 700px;
+}
+
+/* 10. FOOTER (Conclusion Sobre)
+   ----------------------------------------- */
+footer {
+    background-color: var(--primary);
+    color: var(--text-light);
+    padding: 80px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo {
+    height: 90px;
+    margin-bottom: 25px;
+    filter: brightness(0) invert(1); /* Logo en blanc */
+}
+
+.footer-brand p {
+    color: var(--text-light-subtle);
+    font-family: var(--font-body);
+    font-weight: 200;
+    max-width: 400px;
+}
+
+footer h4 {
+    color: var(--secondary);
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: var(--font-body);
+}
+
+.footer-contact p, .footer-social a {
+    color: var(--text-light-subtle);
+    margin-bottom: 12px;
+    display: block;
+    font-weight: 300;
+}
+
+.footer-social ul { list-style: none; }
+.footer-social a:hover { color: var(--secondary); }
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.05); /* Ligne très discrète */
+    color: rgba(255,255,255,0.3); /* Texte estompé */
+    font-size: 0.85rem;
+}
+
+/* 11. RESPONSIVE DESIGN (Adaptabilité)
+   ----------------------------------------- */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 3.5rem; }
+    .split-layout { gap: 40px; flex-direction: column; text-align: center;}
+    .grid-3 { grid-template-columns: 1fr 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .section { padding: 80px 0; }
+    .section-title { font-size: 2.2rem; }
+    .nav-links { display: none; } /* Hamburger nécessaire pour complet mobile */
+    .hamburger { display: flex; }
+    .hero h1 { font-size: 2.8rem; }
+    .grid-3, .footer-grid { grid-template-columns: 1fr; }
+    .hero-content p { font-size: 1rem; }
+}
+
+/* =========================================
+   STYLES COMPLÉMENTAIRES - FORMULAIRE & CHATBOT
+   ========================================= */
+
+/* Layout du formulaire */
+.reservation-section {
+    padding-top: 160px; /* Espace pour la navbar fixe */
+}
+
+.unique-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.form-intro .pre-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--secondary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.info-prestige {
+    margin-top: 40px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.info-item i {
+    color: var(--secondary);
+    font-size: 1.3rem;
+    margin-top: 4px;
+}
+
+.info-item p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* Carte Formulaire */
+.form-card {
+    background: var(--white);
+    padding: 45px;
+    border-radius: 12px;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+    background-color: #fbfbfb;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--secondary);
+    background-color: var(--white);
+    box-shadow: 0 0 8px rgba(197, 160, 89, 0.15);
+}
+
+/* Grille des Horaires disponibles */
+.time-slots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.slot-btn {
+    background: var(--white);
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: all 0.2s ease;
+}
+
+.slot-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.slot-btn.active {
+    background-color: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.btn-submit-form {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn-submit-form:disabled {
+    border-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+    background: none;
+}
+
+.success-box {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.success-box i {
+    font-size: 3.5rem;
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.success-box h4 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   STYLE DU TCHATBOT EN COIN
+   ========================================= */
+.chatbot-wrapper {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 2000;
+    font-family: var(--font-body);
+}
+
+/* Bouton Rond Flottant */
+.chatbot-toggle-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.chatbot-toggle-btn:hover {
+    background-color: var(--secondary);
+    transform: scale(1.05);
+}
+
+.badge-bot {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: #d32f2f;
+    color: white;
+    font-size: 0.7rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Fenêtre principale du Chat */
+.chatbot-window {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 360px;
+    height: 480px;
+    background: var(--white);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transform: translateY(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(19, 78, 85, 0.1);
+}
+
+.chatbot-window.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Header de la fenêtre */
+.chatbot-header {
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bot-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bot-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: var(--white);
+    font-family: var(--font-heading);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+}
+
+.bot-profile h4 {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.bot-profile .status {
+    font-size: 0.75rem;
+    color: #81c784;
+}
+
+.bot-profile .status i {
+    font-size: 0.6rem;
+    margin-right: 3px;
+}
+
+.close-bot {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.close-bot:hover { color: var(--white); }
+
+/* Zone des Messages */
+.chatbot-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.msg {
+    max-width: 80px;
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.bot-msg {
+    background: #eaeaea;
+    color: #333;
+    align-self: flex-start;
+    border-top-left-radius: 2px;
+}
+
+.user-msg {
+    background: var(--primary);
+    color: var(--white);
+    align-self: flex-end;
+    border-top-right-radius: 2px;
+}
+
+/* Zone de Saisie */
+.chatbot-input-area {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    background: var(--white);
+}
+
+.chatbot-input-area input {
+    flex: 1;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    border-radius: 20px;
+    outline: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+}
+
+.chatbot-input-area button {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.chatbot-input-area button:hover {
+    background-color: var(--secondary);
+}
+
+/* Version Responsive Mobile */
+@media (max-width: 768px) {
+    .unique-form-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .form-card { padding: 25px; }
+    .chatbot-window {
+        width: calc(100vw - 40px);
+        right: -10px;
+    }
+}
