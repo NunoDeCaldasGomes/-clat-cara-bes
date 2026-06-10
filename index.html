@@ -6,6 +6,7 @@
     <title>Éclat Caraïbe | Spa de Luxe Paris 7</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -16,7 +17,7 @@
                 <img src="télécharger.png" alt="Éclat Caraïbe Logo" class="logo">
             </a>
             <nav>
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li><a href="#concept">Notre Histoire</a></li>
                     <li><a href="#espaces">Nos Espaces</a></li>
                     <li><a href="#rituels">Rituels & Soins</a></li>
@@ -24,6 +25,9 @@
                     <li><a href="formulaire.html" class="btn-reserver">Réserver</a></li>
                 </ul>
             </nav>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
 
@@ -88,6 +92,169 @@
         </div>
     </section>
 
+    <!-- Rituels & Soins Section -->
+    <section id="rituels" class="section">
+        <div class="container">
+            <div class="text-center mb-rituels">
+                <span class="section-subtitle">Nos Rituels d'Exception</span>
+                <h2 class="section-title center">La Carte des Soins</h2>
+                <p class="desc-max text-center">Chaque soin est une invitation à un voyage sensoriel entre l'élégance parisienne et la richesse thérapeutique des Caraïbes.</p>
+            </div>
+
+            <!-- Catégorie : Expériences Sensorielles -->
+            <div class="menu-category">
+                <div class="category-header">
+                    <span class="category-icon">🌿</span>
+                    <h3 class="category-title">Espaces Sensoriels</h3>
+                    <span class="category-desc">Accès aux installations immersives</span>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Bassin d'Immersion Tropicale</h4>
+                            <p>Lagon intérieur chauffé avec musique sous-marine douce, ambiance lagon caribéen privé.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 1h00</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">55 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Cabine Forêt Tropicale</h4>
+                            <p>Immersion sensorielle avec vapeur chaude parfumée à l'ylang-ylang, eucalyptus et coco, accompagnée de projections visuelles de la jungle de Basse-Terre.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 1h00</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">65 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Grotte de Sel Marin</h4>
+                            <p>Espace taillé en blocs de sel rose rétroéclairés, diffusant des micro-particules d'embruns iodés pour purifier les voies respiratoires et apaiser l'esprit.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 45min</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">45 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catégorie : Soins Signatures -->
+            <div class="menu-category">
+                <div class="category-header">
+                    <span class="category-icon">🐚</span>
+                    <h3 class="category-title">Soins Signatures</h3>
+                    <span class="category-desc">L'excellence de nos rituels exclusifs</span>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item featured">
+                        <div class="menu-item-badge">Signature</div>
+                        <div class="menu-item-info">
+                            <h4>Rituel Océan</h4>
+                            <p>Notre soin phare : gommage délicat aux sels marins des Caraïbes, suivi d'un massage d'exception aux coquillages polis auto-chauffants et d'une infusion tropicale signature.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 1h30</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">150 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Massage Vagues des Caraïbes</h4>
+                            <p>Mouvements lents et enveloppants aux huiles précieuses de coco et d'argan, imitant le doux va-et-vient de l'océan pour une détente profonde.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 1h15</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">120 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Enveloppement Cacao & Coco</h4>
+                            <p>Rituel gourmand et nourrissant avec beurre de cacao et huile de coco pure, un hommage aux richesses de la terre guadeloupéenne pour une peau satinée.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 1h00</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">110 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Soin Cristaux & Lumière</h4>
+                            <p>Massage harmonisant avec pierres semi-précieuses (améthyste, quartz rose) associé à une douce luminothérapie pour rééquilibrer corps et esprit.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 1h15</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">130 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Catégorie : Rituels Prestige -->
+            <div class="menu-category">
+                <div class="category-header">
+                    <span class="category-icon">✨</span>
+                    <h3 class="category-title">Rituels Prestige</h3>
+                    <span class="category-desc">Parcours complets pour une évasion totale</span>
+                </div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Élixir des Sens</h4>
+                            <p>Parcours d'exception : accès hammam + gommage aux sels de Guadeloupe + massage aux huiles tropicales + soin visage hydratant. Une journée de luxe absolu.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 3h00</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">280 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Rituel Lagon d'Or</h4>
+                            <p>Soin visage & corps aux huiles précieuses combiné à un gommage au sel marin doré et une immersion dans le bassin tropical privatisé.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 2h00</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">195 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <h4>Lueur de Lune</h4>
+                            <p>Rituel nocturne apaisant : accès hammam privatisé + massage relaxant + infusion tisane aux fleurs d'hibiscus. Disponible en soirée uniquement.</p>
+                            <span class="duration"><i class="fa-regular fa-clock"></i> 2h30</span>
+                        </div>
+                        <div class="menu-item-price">
+                            <span class="price">220 €</span>
+                            <span class="price-note">par personne</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note tarifaire -->
+            <div class="tarif-note">
+                <i class="fa-solid fa-leaf"></i>
+                <p>Tous nos soins incluent une infusion tropicale de bienvenue et l'accès aux vestiaires. Les prix sont susceptibles d'être modifiés. Pour toute demande sur-mesure ou réservation de groupe, contactez-nous directement.</p>
+                <a href="formulaire.html" class="btn-outline" style="margin-top: 20px;">Réserver mon Rituel</a>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer id="contact">
         <div class="container footer-grid">
@@ -139,5 +306,23 @@
     </div>
     <script src="chatbot.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('open');
+                navLinks.classList.toggle('open');
+            });
+            // Fermer le menu au clic sur un lien
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('open');
+                    navLinks.classList.remove('open');
+                });
+            });
+        }
+    </script>
 </body>
 </html>
